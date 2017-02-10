@@ -1,0 +1,125 @@
+html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="../css/csss.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<div class="pub">
+		<div class="pub_left">
+			<div class="cub_left">
+				<div class="qub_top">2</div>
+				<div class="qub_button">3</div>
+			</div>
+			<div class="cub_right">1</div>
+		</div>
+		<div class="pub_right">
+			<div class="sub_top">
+				<div class="wub_left">4</div>
+				<div class="wub_right">5</div>
+			</div>
+			<div class="sub_button">
+				<div class="op_top">6</div>
+				<div class="op_button">7</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+css
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.pub {
+	background: #144382;
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.pub_left {
+	background: #325;
+	height: 500px;
+	width: 200px;
+	float: left;
+}
+
+.pub_right {
+	background: #880404;
+	height: 500px;
+	width: 800px;
+	float: right;
+}
+
+.sub_top {
+	background-color: #123;
+	height: 300px;
+}
+
+.sub_button {
+	background: #D12A2A;
+	height: 200px;
+}
+
+.cub_left {
+	background-color: #AB3;
+	width: 100px;
+	height: 500px;
+	float: left;
+}
+
+.cub_right {
+	background: #1B9D6A;
+	width: 100px;
+	height: 500px;
+	float: right;
+}
+
+.qub_top {
+	background-color: #1677C2;
+	height: 400px;
+}
+
+.qub_button {
+	background-color: #235710;
+	height: 100px;
+}
+
+.wub_left {
+	background-color: #222328;
+	width: 500px;
+	height: 300px;
+	float: left;
+}
+
+.wub_right {
+	background: #594646;
+	width: 300px;
+	height: 300px;
+	float: right
+}
+
+.op_top {
+	background-color: #5E6592;
+	height: 100px;
+}
+
+.op_button {
+	background-color: #B7BF28;
+	height: 100px;
+}
+
