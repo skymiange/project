@@ -1,0 +1,142 @@
+  表单的提交和消息框的弹出 还有一些html的标签，注意checkbox和radio中必须有value，否则数据无法提交到后台。注意label中的按钮name值要相同。
+button可以有多个，但是无法提交表单，提交表单必须要用submit，option实现下拉的菜单 textarea是文本框，rows是行，cols是列.
+ colspan="2"是一个区域占了两列。onclick是响应点击事件 document.getElementById("username").value;获取输入的字符串
+ 
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script type="text/javascript">
+		function abcd() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		var password1 = document.getElementById("password1").value;
+		if (password1 === password) {
+		if (username.length > 16 || username.length < 6 || password.length > 16 || password.length < 6) {
+			alert("用户名或者密码太长或者太短,用户名和密码都应在6-16位");
+			return;
+		} else {
+			var ok1 = 0;
+			var ok2 = 0;
+			var ok3 = 0;
+			var ok4 = 0;
+			for (var i = 0; i < username.length; i++) {
+				if (username[i] >= '0' && username[i] <= '9')
+					ok1++;
+				if (username[i] >= 'a' && username[i] <= 'z')
+					ok2++;
+				if (username[i] >= 'A' && username[i] <= 'Z')
+					ok3++;
+				if (username[i] == '_')
+					ok4++;
+			}
+			if (ok1 && ok2 && ok3 && ok4) {
+				var ok11 = 0;
+				var ok22 = 0;
+				var ok33 = 0;
+				for (var i = 0; i < password.length; i++) {
+					if (password[i] >= '0' && password[i] <= '9')
+						ok11++;
+					if (password[i] >= 'a' && password[i] <= 'z')
+						ok22++;
+					if (password1[i] >= 'A' && password[i] <= 'Z')
+						ok33++;
+				}
+				if (ok11 && ok22 && ok33) {
+					alert("注册成功");
+				} else {
+					alert("密码必须含有大小写字母和数字");
+				}
+			} else {
+				alert("用户名必须要包含下划线大小写字母和数字");
+				return;
+			}
+		}
+		} else {
+		alert("两次输入的密码不相等,请重新输入");
+		return;
+		}
+		}
+		</script>
+	</head>
+	<body>
+		<nav>
+			<h1>123</h1>
+			<ul>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+			</ul>
+		</nav>
+		<h2>1</h2>
+		<h3>2</h3>
+		<p>文章作者 文章发表时间</p>
+		<table border="1">
+			<tr>
+				<th>1</th>
+				<th>1</th>
+				<th>1</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+				<td><a href="#">1</a></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+				<td><a href="#">1</a></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+				<td><a href="#">1</a></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+				<td><a href="#">1</a></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td colspan="2">1234</td>
+			</tr>
+		</table>
+		<form name="login" action="" method="post">
+			<span>请输入用户名:</span><input type="text" name="username" placeholder="" id="username">
+			</br>
+			<span>请输入密码:</span>
+			<input type="text" name="password" placeholder="" id="password">
+			</br>
+			<span>请重复输入密码:</span>
+			</br>
+			<input type="text" name="password1" placeholder="" id="password1"><input type="button" value="注册" onclick="abcd()"></input></input>
+			</br>
+			<span>性别:</span>
+			<label>
+			<input type="radio" name="1" id="male" value="男" >男</iuput></label>
+			<label><input type="radio" name="1" id="famale" value="女" >女</input></label>
+			
+			<span>城市:</span>
+			<select name="" id="">
+				<option value="1">潭头</option>
+				<option value="2">宁波</option>
+				<option value="3">福州</option>
+			</select>
+			<span>爱好:</span>
+			<label>
+				<input type="checkbox" value="1" name="11">跑步</input></label>
+				<label>	<input type="checkbox" value="2" name="11">健身</input></label>
+				<label>	<input type="checkbox" value="3" name="11">游泳</input></label>
+				<span>个人描述：</span>
+				
+				<textarea cols="5" rows="10" placeholder="请输入你的个人描述"></textarea>
+				
+				<input type="submit" value="确认提交"></input>
+			</form>
+		</body>
+	</html>
